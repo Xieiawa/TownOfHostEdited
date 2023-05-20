@@ -503,6 +503,8 @@ class CheckMurderPatch
                 {
                     killer.KillFlash();
                     killer.KillFlash();
+                    killer.KillFlash();
+                    killer.RPCPlayCustomSound("SUS");
                     NameNotifyManager.Notify(killer, Utils.ColorString(Utils.GetRoleColor(CustomRoles.LostCrew), GetString("IAMSUS!!!")));
                     Utils.NotifyRoles();
                 }, 5f, ("LOST!!!!"));
@@ -510,7 +512,7 @@ class CheckMurderPatch
                 {
                     killer.KillFlash();
                     killer.KillFlash();
-                    killer.KillFlash();
+                    killer.RPCPlayCustomSound("LOST");
                     Utils.NotifyRoles();
                 }, 8f, ("SUS!!!!"));
                 new LateTask(() =>
@@ -518,7 +520,7 @@ class CheckMurderPatch
                     killer.KillFlash();
                     killer.KillFlash();
                     killer.KillFlash();
-                    killer.KillFlash();
+                    killer.RPCPlayCustomSound("LOST");
                     Utils.NotifyRoles();
                 }, 12f, ("SUS!!!!"));
                 new LateTask(() =>
@@ -526,7 +528,7 @@ class CheckMurderPatch
                     killer.KillFlash();
                     killer.KillFlash();
                     killer.KillFlash();
-                    killer.KillFlash();
+                    killer.RPCPlayCustomSound("LOST");
                     Utils.NotifyRoles();
                 }, 14f, ("SUS!!!!"));
                 new LateTask(() =>
@@ -534,7 +536,7 @@ class CheckMurderPatch
                     killer.KillFlash();
                     killer.KillFlash();
                     killer.KillFlash();
-                    killer.KillFlash();
+                    killer.RPCPlayCustomSound("LOST");
                     Utils.NotifyRoles();
                 }, 15f, ("SUS!!!!"));
                 new LateTask(() =>
@@ -543,6 +545,7 @@ class CheckMurderPatch
                     killer.KillFlash();
                     killer.KillFlash();
                     killer.KillFlash();
+                    killer.RPCPlayCustomSound("LOST");
                     target.RpcMurderPlayerV3(killer);
                     Utils.NotifyRoles();
                 }, 17f, ("KILLER!!!!!!!!"));
@@ -555,6 +558,17 @@ class CheckMurderPatch
                     killer.SetRealKiller(target);
                     target.RpcMurderPlayerV3(killer);
                     Logger.Info($"{target.GetRealName()} 特务反杀：{killer.GetRealName()}", "SpecialAgent Kill");
+                    return false;
+                }
+                break;
+            //击杀任务工
+            case CustomRoles.HatarakiMan:
+                var pg1 = IRandom.Instance;
+                if (pg1.Next(0, 100) < Options.SpecialAgentrobability.GetInt())
+                {
+                    killer.SetRealKiller(target);
+                    target.RpcMurderPlayerV3(killer);
+                    Logger.Info($"{target.GetRealName()} 任务工反杀：{killer.GetRealName()}", "HatarakiMan Kill");
                     return false;
                 }
                 break;

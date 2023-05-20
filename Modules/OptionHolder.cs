@@ -226,6 +226,7 @@ public static class Options
     public static OptionItem RudepeoplekillMaxOfUseage;
     public static OptionItem DepressedKillCooldown;
     public static OptionItem SpecialAgentrobability;
+    public static OptionItem HatarakiManrobability;
 
     // タスク無効化
     public static OptionItem DisableTasks;
@@ -339,6 +340,7 @@ public static class Options
     public static OverrideTasksData WorkaholicTasks;
     public static OverrideTasksData CrewpostorTasks;
     public static OverrideTasksData SpecialAgentTasks;
+    public static OverrideTasksData HatarakiManTasks;
 
     // その他
     public static OptionItem FixFirstKillCooldown;
@@ -701,6 +703,10 @@ public static class Options
             .SetValueFormat(OptionFormat.Seconds);
         RudepeoplekillMaxOfUseage = IntegerOptionItem.Create(75345351, "RudepeoplekillMaxOfUseage", new(1, 999, 1), 10, TabGroup.CrewmateRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.Rudepeople])
             .SetValueFormat(OptionFormat.Times);
+        SetupRoleOptions(452013, TabGroup.CrewmateRoles, CustomRoles.HatarakiMan);
+        HatarakiManTasks = OverrideTasksData.Create(453013, TabGroup.CrewmateRoles, CustomRoles.HatarakiMan);
+        HatarakiManrobability = IntegerOptionItem.Create(454013, "HatarakiManrobability", new(0, 30, 1), 30, TabGroup.CrewmateRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.HatarakiMan])
+            .SetValueFormat(OptionFormat.Percent);
 
         // Neutral
         SetupRoleOptions(50500, TabGroup.NeutralRoles, CustomRoles.Arsonist);

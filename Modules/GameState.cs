@@ -317,6 +317,24 @@ public class TaskState
                     CustomWinnerHolder.ResetAndSetWinner(CustomWinner.Impostor);
                 }
             }
+            //任务工做完工作了
+            if (player.Is(CustomRoles.HatarakiMan) && (CompletedTasksCount + 1) >= AllTasksCount)
+            {
+                if (player.Is(CustomRoles.Charmed))
+                {
+                    CustomWinnerHolder.ResetAndSetWinner(CustomWinner.Succubus);
+                    Logger.Info($"任务工-魅魔做完任务", "HatarakiMan");
+                }
+                else if(player.Is(CustomRoles.Madmate)){
+                    CustomWinnerHolder.ResetAndSetWinner(CustomWinner.Impostor);
+                    Logger.Info($"任务工-叛徒做完任务", "HatarakiMan");
+                }
+                else
+                {
+                    CustomWinnerHolder.ResetAndSetWinner(CustomWinner.Crewmate);
+                    Logger.Info($"任务工-船员做完任务", "HatarakiMan");
+                }
+            }
 
         }
 

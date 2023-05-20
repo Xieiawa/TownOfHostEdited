@@ -31,13 +31,13 @@ public class Main : BasePlugin
     public const string DebugKeyHash = "c0fd562955ba56af3ae20d7ec9e64c664f0facecef4b3e366e109306adeae29d";
     public const string DebugKeySalt = "59687b";
     public static ConfigEntry<string> DebugKeyInput { get; private set; }
-    public static readonly string MainMenuText = "XI";
+    public static readonly string MainMenuText = "喜！瓜！";
     public const string PluginGuid = "com.xi.townofhosteditedxi";
-    public const string PluginVersion = "1.0.0";
+    public const string PluginVersion = "1.0.2";
     public const int PluginCreate = 7;
 
     public static readonly bool ShowQQButton = true;
-    public static readonly string QQInviteUrl = "https://jq.qq.com/?_wv=1027&k=2RpigaN6";
+    public static readonly string QQInviteUrl = "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=h2RuFAXYtGvvNcn6f4ughVCUmuIjXmWD&authKey=BXpmwxjjtM4mNifJbAUewJuwYEp%2FyqvJJcBVIIo%2FSuvHs93twIzGOSbs9MYXtBzI&noverify=0&group_code=680951911";
     public static readonly bool ShowDiscordButton = true;
     public static readonly string DiscordInviteUrl = "https://discord.gg/hkk2p9ggv4";
 
@@ -292,6 +292,7 @@ public class Main : BasePlugin
                 {CustomRoles.DovesOfNeace, "#FFFFFF" },
                 {CustomRoles.LostCrew, "#666666"},
                 {CustomRoles.Rudepeople, "#66CC00"},
+                {CustomRoles.HatarakiMan,"#6A5ACD" },
                 //第三陣営役職
                 {CustomRoles.Arsonist, "#ff6633"},
                 {CustomRoles.Jester, "#ec62a5"},
@@ -487,6 +488,7 @@ public enum CustomRoles
     DovesOfNeace,
     LostCrew,
     Rudepeople,
+    HatarakiMan,
     //Neutral
     Arsonist,
     Jester,

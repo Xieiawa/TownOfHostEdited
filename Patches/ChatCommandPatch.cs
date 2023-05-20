@@ -520,6 +520,8 @@ internal class ChatCommands
             "抑郁者" or "抑郁者" => GetString("Depressed"),
             "贱人" or "賤人" => GetString("Bitch"),
             "挑衅者" or "挑衅" or "挑釁者" or "粗鲁的人" => GetString("Rudepeople"),
+            "任务工" or "任务获胜者" => GetString("HatarakiMan"),
+            "特务" or "特种任务兵" => GetString("SpecialAgent"),
             _ => text,
         };
     }

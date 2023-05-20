@@ -133,6 +133,7 @@
 "Observer","观察者","Observer","Аудитор","窺視者",""
 "DovesOfNeace","和平之鸽","Dove of Peace","Пацифист","和平之鴿",""
 "Rudepeople","挑衅者"
+"HatarakiMan","任务工"
 
 "# 中立阵营 / Neutrals"
 "Jester","小丑","Jester","Шут","小丑","小丑"
@@ -290,6 +291,7 @@
 "ObserverInfo","亲眼所见，亦非真实","You can see all shield-animations","Вы видите анимации сломанных щитов","他的盾沒了?",""
 "DovesOfNeaceInfo","何必打打杀杀呢？","Vent to Reset Everyone's Kill CD","А зачем убивать?","何必打打殺殺呢?",""
 "RudepeopleInfo","没*东西"
+"HatarakiManInfo","做你*的任务"
 
 "# 中立阵营 / Neutral descriptions"
 "ArsonistInfo","乖乖站好！","Douse Everyone and Ignite","Облейте всех игроков, а потом подожгите","燒吧，燒吧，燃燒吧","乖乖站好！"
@@ -428,6 +430,7 @@
 "ObserverInfoLong","(船员阵营):\n观察者可以看到其他玩家的碎盾动画。首次会议召开前观察者的技能不会生效。","(Crewmates):\nThe Observer can see all shield animations caused by other players after the first meeting.","(Член Экипажа):\nАудитор видят сломанные щиты. Навык видения срабатывает с первого собрания.","(船員陣營):\n窺視者可以看到其他玩家的碎盾動畫。首次會議召開前窺視者的技能不會生效。",""
 "DovesOfNeaceInfoLong","(船员阵营):\n当和平之鸽可以通过使用通风管道进行歌颂，在场所有拥有击杀键的玩家的击杀/技能冷却时间会被重置。当和平之鸽成为叛徒时歌颂只对船员生效。","(Crewmates):\nWhen the Dove of Peace vents, they will reset the kill cooldown for every player with a kill button. When they become a Madmate, this ability will only work on Crewmates.","(Член Экипажа):\nКогда Пацифист использует вентиляцию, время перезарядки убийства/навыков всех игроков с кнопкой убийства будет сброшено. Когда Пацифист становится предателем, навык действует только на Членов Экипажа.",""(船員陣營):\n和平之鴿可以通過進入通風管來進行歌頌，",""
 "RudepeopleInfoLong","(船员阵营):\n当挑衅者跳管时会开启挑衅阶段，在挑衅阶段杀死挑衅者时挑衅者会和凶手同归于尽。"
+"HatarakiManInfoLong","(船员阵营):\n当任务工完成所有任务时，船员胜利，如果被魅魔魅惑则做完任务时魅魔胜利，如果被招募则内鬼获胜。\n击杀任务工时有几率会被反杀"
 
 "# 中立阵营 / Neutrals descriptions"
 "ArsonistInfoLong","(中立阵营):\n纵火犯可以通过对玩家点击击杀按钮并跟随其数秒来完成涂油，开始涂油以及涂油成功时会显示护盾破碎的动画作为提示（仅自己可见）。当所有存活玩家都被纵火犯涂油后，纵火犯可以通过跳通风管来点火，并单独获得胜利。\n\n玩家名显示「△」表示涂油中\n玩家名显示「▲」表示已涂油。","(Neutrals):\nThe Arsonist can douse by clicking the kill button on the player and following them for a few seconds. When the dousing starts and it's successful, a shield animation will be displayed as a reminder (only visible to themselves). When the Arsonist has doused all surviving players, the Arsonist can vent to start the fire and win alone.\n\nIf the player name shows 「△」, that means they are being doused;\nif the player name shows 「▲」, it means they have been completely doused.","(нейтральный): поджигатель может закончить смазку, нажав на кнопку убийства игрока и следуя за ним в течение нескольких секунд, начать мазать, а также показать анимацию разбитого щита, когда она будет успешной (только для себя). После того, как все выжившие игроки были смазаны поджигателем, поджигатель мог воспламенить его, перепрыгнув через вентиляционную трубу и одержать победу в одиночку. \ n что n игрок показыва「△」заяв в смазыва \ что n что игрок показыва「▲」что смазыва.","(中立陣營):\n縱火犯可以通過對玩家使用殺人鍵並跟隨數秒來澆油，開始以及結束澆油時會出現盾牌破碎的效果作為提示。當所有存活玩家都被縱火犯澆上油時，縱火犯可以以跳管道的方式來點火，並單獨獲勝。\n\n玩家名字顯示「△」表示澆油中\n顯示「▲」表示已經澆油。","(中立阵营):\n纵火犯可以通过对玩家点击击杀按钮并跟随其数秒来完成涂油，开始涂油以及涂油成功时会显示护盾破碎的动画作为提示（仅自己可见）。当所有存活玩家都被纵火犯涂油后，纵火犯可以通过跳通风管来点火，并单独获得胜利。\n\n玩家名显示「△」表示涂油中\n玩家名显示「▲」表示已涂油。"
@@ -1195,7 +1198,7 @@
 "EveryoneDied","无人生还","No One Left","Все Мертвы","無人生還","无人生还"
 "ForceEndText","房主强制结束了游戏","Host has aborted the game","Хост завершил игру","房主強制結束了遊戲","房主强制结束了游戏"
 "HideGameCodes","直播模式","Hide Game Code","Скрыть Игровой Код","直播模式","直播模式"
-"updateButton","一键更新","Update","Обновление","一鍵更新","一键更新"
+"updateButton","一键更新","Update","","一键更新","一键更新"
 "updatePleaseWait","请稍候……","Please Wait...","Пожалуйста, подождите...","請稍後......","请稍候……"
 "updateManually","更新失败，请更换网络重试或手动更新。","Update failed.\nPlease Update Manually.","Ошибка обновления. \nПожалуйста обновите вручную.","更新失敗，請嘗試更換網路重試或手動更新。","更新失败，请更换网络重试或手动更新。"
 "updateInProgress","更新中……","Updating...","Обновление...","更新中......","更新中……"
@@ -1349,7 +1352,7 @@
 "FPSSetTo","帧数上限设置为: {0}","FPS Set To: {0}","FPS Установлен на: {0}","FPS上限設定為: {0}","帧数上限设置为: {0}"
 "HostKillSelfByCommand","房主选择自杀（使用了自杀指令）","The lobby Host decided to commit suicide","Хост лобби решил покончить с собой","房主選擇了自殺(使用了自殺指令)","房主选择自杀（使用了自杀指令）"
 "SyncCustomSettingsRPC","已同步RPC","Synchronized RPC","Синхронизированный RPC","已同步RPC","已同步RPC"
-"TOHEVisitorCount","截至今日，TOHE已经被使用 <color={0}>{1}</color>次 啦~","To date TOHE has been used <color={0}>{1}</color> times~","На сегодняшний день TOHE использовался <color={0}>{1}</color> раз~","截至今日，TOHE已經被使用 <color={0}>{1}</color>次 啦~","截至今日，TOHE已经被使用 <color={0}>{1}</color>次 啦~"
+"TOHEVisitorCount","截至今日，TOHEXi已经被使用 <color={0}>{1}</color>次 啦~","To date TOHE has been used <color={0}>{1}</color> times~","На сегодняшний день TOHE использовался <color={0}>{1}</color> раз~","截至今日，TOHE已經被使用 <color={0}>{1}</color>次 啦~","截至今日，TOHE已经被使用 <color={0}>{1}</color>次 啦~"
 "Mode","模式","Mode","Режим","模式","模式"
 "Target","目标","Target","Цель","目標","目标"
 "PlayerInfo","上局所有玩家信息","Player Info","Информация о игроке","上局所有玩家訊息","上局所有玩家信息"

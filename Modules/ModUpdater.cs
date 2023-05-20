@@ -18,7 +18,7 @@ namespace TOHE;
 public class ModUpdater
 {
     private static readonly string URL_2018k = "http://api.2018k.cn";
-    private static readonly string URL_Github = "https://api.github.com/repos/KARPED1EM/TownOfHostEdited";
+    private static readonly string URL_Github = "https://api.github.com/repos/Xieiawa/TownOfHostEdited-XI";
     public static bool hasUpdate = false;
     public static bool forceUpdate = true;
     public static bool isBroken = false;
@@ -127,7 +127,6 @@ public class ModUpdater
             else notice = notices[1];
             md5 = data[2];
             visit = int.TryParse(data[3], out int x) ? x : 0;
-            visit += 26820 + 99280; //旧版本数据
             var create = 1;
             if (int.TryParse(data[0], out int ct) && ct < 1000) create = ct;
             if (create > Main.PluginCreate)
@@ -302,7 +301,7 @@ public class ModUpdater
             foreach (var path in Directory.EnumerateFiles(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "*.*"))
             {
                 if (path.EndsWith(Path.GetFileName(Assembly.GetExecutingAssembly().Location))) continue;
-                if (path.EndsWith("TOHE.dll")) continue;
+                if (path.EndsWith("TOHEXi.dll")) continue;
                 Logger.Info($"{Path.GetFileName(path)} 已删除", "DeleteOldFiles");
                 File.Delete(path);
             }
@@ -318,7 +317,7 @@ public class ModUpdater
     {
         try
         {
-            var savePath = "BepInEx/plugins/TOHE.dll.temp";
+            var savePath = "BepInEx/plugins/TOHEXi.dll.temp";
             File.Delete(savePath);
 
 #pragma warning disable SYSLIB0014
@@ -332,7 +331,7 @@ public class ModUpdater
             
                 var fileName = Assembly.GetExecutingAssembly().Location;
                 File.Move(fileName, fileName + ".bak");
-                File.Move("BepInEx/plugins/TOHE.dll.temp", fileName);
+                File.Move("BepInEx/plugins/TOHEXi.dll.temp", fileName);
                 ShowPopup(GetString("updateRestart"), StringNames.ExitGame, true, true);
             
         }

@@ -86,6 +86,10 @@ internal static class CustomRolesHelper
                 CustomRoles.Crewpostor => CustomRoles.Crewmate,
                 CustomRoles.Observer => CustomRoles.Crewmate,
                 CustomRoles.DovesOfNeace => CustomRoles.Engineer,
+                CustomRoles.Depressed => CustomRoles.Impostor,
+                CustomRoles.LostCrew => CustomRoles.Crewmate,
+                CustomRoles.Rudepeople => CustomRoles.Engineer,
+                CustomRoles.SpecialAgent => CustomRoles.Crewmate,
                 _ => role.IsImpostor() ? CustomRoles.Impostor : CustomRoles.Crewmate,
             };
     }
@@ -140,7 +144,10 @@ internal static class CustomRolesHelper
             CustomRoles.Reach or
             CustomRoles.Charmed or
             CustomRoles.Bait or
-            CustomRoles.Trapper;
+            CustomRoles.Trapper or
+            CustomRoles.Bitch or
+           CustomRoles.Rambler or
+        CustomRoles.Destroyers;
     }
     public static bool IsNK(this CustomRoles role) // 是否带刀中立
     {
@@ -221,7 +228,9 @@ internal static class CustomRolesHelper
             CustomRoles.Hangman or
             CustomRoles.Bard or
             CustomRoles.Swooper or
-            CustomRoles.Crewpostor;
+            CustomRoles.Crewpostor or
+            CustomRoles.Depressed or
+        CustomRoles.SpecialAgent;
     }
     public static bool IsNeutral(this CustomRoles role) // 是否中立
     {
@@ -281,6 +290,10 @@ internal static class CustomRolesHelper
         if (role is CustomRoles.Trapper && ((pc.GetCustomRole().IsCrewmate() && !Options.CrewCanBeTrapper.GetBool()) || (pc.GetCustomRole().IsNeutral() && !Options.NeutralCanBeTrapper.GetBool()) || (pc.GetCustomRole().IsImpostor() && !Options.ImpCanBeTrapper.GetBool()))) return false;
         if (role is CustomRoles.Reach && !pc.CanUseKillButton()) return false;
         if (role is CustomRoles.Flashman && pc.Is(CustomRoles.Swooper)) return false;
+        if (role is CustomRoles.Bitch && pc.Is(CustomRoles.Jester)) return false;
+        if (role is CustomRoles.Rambler && (pc.Is(CustomRoles.Flashman) || pc.Is(CustomRoles.SpeedBooster))) return false;
+        if (role is CustomRoles.Destroyers or CustomRoles.Mimic && !pc.GetCustomRole().IsImpostor()) return false;
+        if (role is CustomRoles.Destroyers && (pc.Is(CustomRoles.Bomber) || pc.Is(CustomRoles.BoobyTrap))) return false;
         return true;
     }
     public static RoleTypes GetRoleTypes(this CustomRoles role)

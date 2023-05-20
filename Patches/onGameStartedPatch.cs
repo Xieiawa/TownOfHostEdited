@@ -84,6 +84,7 @@ internal class ChangeRoleSettings
             Main.MadmateNum = 0;
             Main.BardCreations = 0;
             Main.DovesOfNeaceNumOfUsed = new();
+            Main.RudepeopleNumOfUsed = new();
 
             ReportDeadBodyPatch.CanReport = new();
 
@@ -266,6 +267,8 @@ internal class SelectRolesPatch
 
             foreach (var cp in RoleResult.Where(x => x.Value == CustomRoles.Crewpostor))
                 AssignDesyncRole(cp.Value, cp.Key, senders, rolesMap, BaseRole: RoleTypes.Crewmate, hostBaseRole: RoleTypes.Impostor);
+            foreach (var sa in RoleResult.Where(x => x.Value == CustomRoles.SpecialAgent))
+                    AssignDesyncRole(sa.Value, sa.Key, senders, rolesMap, BaseRole: RoleTypes.Crewmate, hostBaseRole: RoleTypes.Impostor);
 
             MakeDesyncSender(senders, rolesMap);
 
@@ -289,6 +292,11 @@ internal class SelectRolesPatch
             {
                 var kp = RoleResult.Where(x => x.Key.PlayerId == sd.Item1.PlayerId).FirstOrDefault();
                 if (kp.Value.IsDesyncRole() || kp.Value == CustomRoles.Crewpostor)
+                {
+                    Logger.Warn($"反向原版职业 => {sd.Item1.GetRealName()}: {sd.Item2}", "Override Role Select");
+                    continue;
+                }
+                if (kp.Value.IsDesyncRole() || kp.Value == CustomRoles.SpecialAgent)
                 {
                     Logger.Warn($"反向原版职业 => {sd.Item1.GetRealName()}: {sd.Item2}", "Override Role Select");
                     continue;
@@ -536,6 +544,9 @@ internal class SelectRolesPatch
                         break;
                     case CustomRoles.DovesOfNeace:
                         Main.DovesOfNeaceNumOfUsed.Add(pc.PlayerId, Options.DovesOfNeaceMaxOfUseage.GetInt());
+                        break;
+                    case CustomRoles.Rudepeople:
+                        Main.RudepeopleNumOfUsed.Add(pc.PlayerId, Options.RudepeoplekillMaxOfUseage.GetInt());
                         break;
                 }
                 foreach (var subRole in pc.GetCustomSubRoles())

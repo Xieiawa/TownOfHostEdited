@@ -16,24 +16,24 @@ using UnityEngine;
 [assembly: AssemblyVersion(TOHE.Main.PluginVersion)]
 namespace TOHE;
 
-[BepInPlugin(PluginGuid, "TOHE", PluginVersion)]
+[BepInPlugin(PluginGuid, "TOHEXi", PluginVersion)]
 [BepInIncompatibility("jp.ykundesu.supernewroles")]
 [BepInProcess("Among Us.exe")]
 public class Main : BasePlugin
 {
     // == プログラム設定 / Program Config ==
-    public static readonly string ModName = "TOHE";
+    public static readonly string ModName = "TOHEXi";
     public static readonly string ModColor = "#ffc0cb";
     public static readonly bool AllowPublicRoom = true;
-    public static readonly string ForkId = "TOHE";
+    public static readonly string ForkId = "TOHEXi";
     public const string OriginalForkId = "OriginalTOH";
     public static HashAuth DebugKeyAuth { get; private set; }
     public const string DebugKeyHash = "c0fd562955ba56af3ae20d7ec9e64c664f0facecef4b3e366e109306adeae29d";
     public const string DebugKeySalt = "59687b";
     public static ConfigEntry<string> DebugKeyInput { get; private set; }
-    public static readonly string MainMenuText = "哟这不TOHE吗，几天不见Bug又多了？";
-    public const string PluginGuid = "com.karped1em.townofhostedited";
-    public const string PluginVersion = "2.3.5";
+    public static readonly string MainMenuText = "XI";
+    public const string PluginGuid = "com.xi.townofhosteditedxi";
+    public const string PluginVersion = "1.0.0";
     public const int PluginCreate = 7;
 
     public static readonly bool ShowQQButton = true;
@@ -163,6 +163,8 @@ public class Main : BasePlugin
     public static int BardCreations = 0;
     public static Dictionary<byte, byte> Provoked = new();
     public static Dictionary<byte, int> DovesOfNeaceNumOfUsed = new();
+    public static Dictionary<byte, long> RudepeopleInProtect = new();
+    public static Dictionary<byte, int> RudepeopleNumOfUsed = new();
 
     public static Dictionary<byte, CustomRoles> DevRole = new();
 
@@ -288,6 +290,8 @@ public class Main : BasePlugin
                 {CustomRoles.Mediumshiper, "#a200ff"},
                 {CustomRoles.Observer, "#a8e0fa"},
                 {CustomRoles.DovesOfNeace, "#FFFFFF" },
+                {CustomRoles.LostCrew, "#666666"},
+                {CustomRoles.Rudepeople, "#66CC00"},
                 //第三陣営役職
                 {CustomRoles.Arsonist, "#ff6633"},
                 {CustomRoles.Jester, "#ec62a5"},
@@ -338,6 +342,9 @@ public class Main : BasePlugin
                 {CustomRoles.Charmed, "#ff00ff"},
                 {CustomRoles.Bait, "#00f7ff"},
                 {CustomRoles.Trapper, "#5a8fd0"},
+                {CustomRoles.Bitch, "#333333"},
+                {CustomRoles.Rambler, "#99CCFF"},
+                 {CustomRoles.Destroyers, "#ff1919"},
                 //SoloKombat
                 {CustomRoles.KB_Normal, "#f55252"}
             };
@@ -441,6 +448,8 @@ public enum CustomRoles
     Bard,
     Swooper,
     Crewpostor,
+    Depressed,
+    SpecialAgent,
     //Crewmate(Vanilla)
     Engineer,
     GuardianAngel,
@@ -476,6 +485,8 @@ public enum CustomRoles
     Mediumshiper,
     Observer,
     DovesOfNeace,
+    LostCrew,
+    Rudepeople,
     //Neutral
     Arsonist,
     Jester,
@@ -531,6 +542,9 @@ public enum CustomRoles
     Charmed,
     Bait,
     Trapper,
+    Bitch,
+    Rambler,
+    Destroyers,
 }
 //WinData
 public enum CustomWinner

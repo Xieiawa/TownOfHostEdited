@@ -68,7 +68,7 @@ public class ModUpdater
         })));
     }
 
-    public static string UrlSetId(string url) => url + "?id=6C5A46D1420E476ABD560271FC8040D7";
+    public static string UrlSetId(string url) => url + "?id=8F249256BAFA41FB97E6FDE8F899ED57";
     public static string UrlSetCheck(string url) => url + "/checkVersion";
     public static string UrlSetInfo(string url) => url + "/getExample";
     public static string UrlSetToday(string url) => url + "/today";
@@ -329,20 +329,12 @@ public class ModUpdater
             client.DownloadFileAsync(new Uri(url), savePath);
             while (client.IsBusy) await Task.Delay(1);
 
-            if (GetMD5HashFromFile(savePath) != md5)
-            {
-                File.Delete(savePath);
-                ShowPopup(GetString("downloadFailed"), StringNames.Okay, true, false);
-                MainMenuManagerPatch.updateButton.SetActive(true);
-                MainMenuManagerPatch.updateButton.transform.position = MainMenuManagerPatch.template.transform.position + new Vector3(0.25f, 0.75f);
-            }
-            else
-            {
+            
                 var fileName = Assembly.GetExecutingAssembly().Location;
                 File.Move(fileName, fileName + ".bak");
                 File.Move("BepInEx/plugins/TOHE.dll.temp", fileName);
                 ShowPopup(GetString("updateRestart"), StringNames.ExitGame, true, true);
-            }
+            
         }
         catch (Exception ex)
         {

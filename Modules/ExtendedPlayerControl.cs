@@ -436,6 +436,7 @@ static class ExtendedPlayerControl
             CustomRoles.Crewpostor => false,
             CustomRoles.Totocalcio => Totocalcio.CanUseKillButton(pc),
             CustomRoles.Succubus => Succubus.CanUseKillButton(pc),
+            CustomRoles.SpecialAgent => false,
             CustomRoles.Warlock => !Main.isCurseAndKill.TryGetValue(pc.PlayerId, out bool wcs) || !wcs,
             _ => pc.Is(CustomRoleTypes.Impostor),
         };
@@ -456,7 +457,8 @@ static class ExtendedPlayerControl
             CustomRoles.Provocateur or
             CustomRoles.Totocalcio or
             CustomRoles.Succubus or
-            CustomRoles.Crewpostor
+            CustomRoles.Crewpostor or
+            CustomRoles.SpecialAgent
             => false,
 
             CustomRoles.Jackal => Jackal.CanVent.GetBool(),

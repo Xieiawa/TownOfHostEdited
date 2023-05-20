@@ -393,6 +393,7 @@ public static class Utils
             case CustomRoles.Terrorist:
             case CustomRoles.Sunnyboy:
             case CustomRoles.Crewpostor:
+            case CustomRoles.SpecialAgent:
                 if (ForRecompute)
                     hasTasks = false;
                 break;

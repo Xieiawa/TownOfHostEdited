@@ -352,6 +352,58 @@ class CheckMurderPatch
                 Utils.TP(killer.NetTransform, ops);
             }, 0.05f, "OverKiller Murder");
         }
+        //抑郁者赌命
+        if (killer.Is(CustomRoles.Depressed))
+        {
+            var rd = IRandom.Instance;
+            if (rd.Next(0, 100) < Options.DepressedIdioctoniaProbability.GetInt())
+            {
+                Main.PlayerStates[killer.PlayerId].deathReason = PlayerState.DeathReason.Depression;
+                killer.MurderPlayer(killer);
+            }
+        }
+        //毁尸者毁尸
+        if (killer.Is(CustomRoles.Destroyers))
+        {
+            var rd = IRandom.Instance;
+            int rndNum = rd.Next(0, 100);
+            if (rndNum >= 10 && rndNum < 20)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Suicide;
+            }
+            if (rndNum >= 20 && rndNum < 30)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Misfire;
+            }
+            if (rndNum >= 30 && rndNum < 40)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Revenge;
+            }
+            if (rndNum >= 40 && rndNum < 50)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.FollowingSuicide;
+            }
+            if (rndNum >= 50 && rndNum < 60)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Torched;
+            }
+            if (rndNum >= 60 && rndNum < 70)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Bombed;
+            }
+            if (rndNum >= 70 && rndNum < 80)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Quantization;
+            }
+            if (rndNum >= 80 && rndNum < 90)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.PissedOff;
+            }
+            if (rndNum >= 90 && rndNum < 100)
+            {
+                Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Trialed;
+            }
+        }
 
         //==キル処理==
         __instance.RpcMurderPlayerV3(target);
@@ -430,6 +482,79 @@ class CheckMurderPatch
                     killer.RpcGuardAndKill(target);
                     target.RpcGuardAndKill();
                     target.Notify(GetString("BKOffsetKill"));
+                    return false;
+                }
+                break;
+            //击杀挑衅者
+            case CustomRoles.Rudepeople:
+                if (Main.RudepeopleInProtect.ContainsKey(target.PlayerId) && killer.PlayerId != target.PlayerId)
+                    if (Main.RudepeopleInProtect[target.PlayerId] + Options.RudepeopleSkillDuration.GetInt() >= Utils.GetTimeStamp(DateTime.Now))
+                    {
+                        Main.PlayerStates[killer.PlayerId].deathReason = PlayerState.DeathReason.PissedOff;
+                        killer.RpcMurderPlayerV3(target);
+                        killer.RpcMurderPlayerV3(killer);
+                        killer.SetRealKiller(target);
+                        return false;
+                    }
+                break;
+            //击杀失落的船员
+            case CustomRoles.LostCrew:
+                new LateTask(() =>
+                {
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    NameNotifyManager.Notify(killer, Utils.ColorString(Utils.GetRoleColor(CustomRoles.LostCrew), GetString("IAMSUS!!!")));
+                    Utils.NotifyRoles();
+                }, 5f, ("LOST!!!!"));
+                new LateTask(() =>
+                {
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    Utils.NotifyRoles();
+                }, 8f, ("SUS!!!!"));
+                new LateTask(() =>
+                {
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    Utils.NotifyRoles();
+                }, 12f, ("SUS!!!!"));
+                new LateTask(() =>
+                {
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    Utils.NotifyRoles();
+                }, 14f, ("SUS!!!!"));
+                new LateTask(() =>
+                {
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    Utils.NotifyRoles();
+                }, 15f, ("SUS!!!!"));
+                new LateTask(() =>
+                {
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    killer.KillFlash();
+                    target.RpcMurderPlayerV3(killer);
+                    Utils.NotifyRoles();
+                }, 17f, ("KILLER!!!!!!!!"));
+                break;
+            //击杀特务
+            case CustomRoles.SpecialAgent:
+                var pg = IRandom.Instance;
+                if (pg.Next(0, 100) < Options.SpecialAgentrobability.GetInt())
+                {
+                    killer.SetRealKiller(target);
+                    target.RpcMurderPlayerV3(killer);
+                    Logger.Info($"{target.GetRealName()} 特务反杀：{killer.GetRealName()}", "SpecialAgent Kill");
                     return false;
                 }
                 break;
@@ -959,6 +1084,7 @@ class ReportDeadBodyPatch
         Main.VeteranInProtect.Clear();
         Main.GrenadierBlinding.Clear();
         Main.MadGrenadierBlinding.Clear();
+        Main.RudepeopleInProtect.Clear();
         Divinator.didVote.Clear();
 
         Concealer.OnReportDeadBody();
@@ -1277,6 +1403,16 @@ class FixedUpdatePatch
                         player.RpcGuardAndKill();
                         player.Notify(GetString("GrenadierSkillStop"));
                         Utils.MarkEveryoneDirtySettings();
+                    }
+                }
+                //检查挑衅者技能是否失效
+                if (GameStates.IsInTask && player.Is(CustomRoles.Rudepeople))
+                {
+                    if (Main.RudepeopleInProtect.TryGetValue(player.PlayerId, out var vtime) && vtime + Options.RudepeopleSkillDuration.GetInt() < Utils.GetTimeStamp(DateTime.Now))
+                    {
+                        Main.RudepeopleInProtect.Remove(player.PlayerId);
+                        player.RpcGuardAndKill();
+                        player.Notify(string.Format(GetString("RudepeopleOffGuard"), Main.RudepeopleNumOfUsed[player.PlayerId]));
                     }
                 }
 
@@ -1760,6 +1896,22 @@ class EnterVentPatch
             pc.RPCPlayCustomSound("Dove");
             pc.Notify(string.Format(GetString("DovesOfNeaceOnGuard"), Main.DovesOfNeaceNumOfUsed[pc.PlayerId]));
         }
+        if (pc.Is(CustomRoles.Rudepeople))
+        {
+            if (Main.RudepeopleNumOfUsed[pc.PlayerId] < 1)
+            {
+                pc?.MyPhysics?.RpcBootFromVent(__instance.Id);
+                pc.Notify(GetString("RudepeopleMaxUsage"));
+            }
+            else
+            {
+                Main.RudepeopleInProtect.Remove(pc.PlayerId);
+                Main.RudepeopleInProtect.Add(pc.PlayerId, Utils.GetTimeStamp(DateTime.Now));
+                Main.RudepeopleNumOfUsed[pc.PlayerId]--;
+                pc.RpcGuardAndKill(pc);
+                pc.Notify(GetString("RudepeopleOnGuard"), Options.RudepeopleSkillDuration.GetFloat());
+            }
+        }
     }
 }
 [HarmonyPatch(typeof(PlayerPhysics), nameof(PlayerPhysics.CoEnterVent))]
@@ -1807,7 +1959,8 @@ class CoEnterVentPatch
         (__instance.myPlayer.Is(CustomRoles.Mayor) && Main.MayorUsedButtonCount.TryGetValue(__instance.myPlayer.PlayerId, out var count) && count >= Options.MayorNumOfUseButton.GetInt()) ||
         (__instance.myPlayer.Is(CustomRoles.Paranoia) && Main.ParaUsedButtonCount.TryGetValue(__instance.myPlayer.PlayerId, out var count2) && count2 >= Options.ParanoiaNumOfUseButton.GetInt()) ||
         (__instance.myPlayer.Is(CustomRoles.Veteran) && Main.VeteranNumOfUsed.TryGetValue(__instance.myPlayer.PlayerId, out var count3) && count3 < 1) ||
-        (__instance.myPlayer.Is(CustomRoles.DovesOfNeace) && Main.DovesOfNeaceNumOfUsed.TryGetValue(__instance.myPlayer.PlayerId, out var count4) && count4 < 1)
+        (__instance.myPlayer.Is(CustomRoles.DovesOfNeace) && Main.DovesOfNeaceNumOfUsed.TryGetValue(__instance.myPlayer.PlayerId, out var count4) && count4 < 1) ||
+         (__instance.myPlayer.Is(CustomRoles.Rudepeople) && Main.RudepeopleNumOfUsed.TryGetValue(__instance.myPlayer.PlayerId, out var count5) && count5 < 1)
         )
         {
             MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(__instance.NetId, (byte)RpcCalls.BootFromVent, SendOption.Reliable, -1);
@@ -1823,6 +1976,7 @@ class CoEnterVentPatch
 
             if (__instance.myPlayer.Is(CustomRoles.DovesOfNeace)) __instance.myPlayer.Notify(GetString("DovesOfNeaceMaxUsage"));
             if (__instance.myPlayer.Is(CustomRoles.Veteran)) __instance.myPlayer.Notify(GetString("VeteranMaxUsage"));
+           if(__instance.myPlayer.Is(CustomRoles.Rudepeople)) __instance.myPlayer.Notify(GetString("RudepeopleMaxUsage"));
 
             return false;
         }

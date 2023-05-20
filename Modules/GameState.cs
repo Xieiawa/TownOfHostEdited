@@ -141,6 +141,7 @@ public class PlayerState
         Dismembered,
         LossOfHead,
         Trialed,
+        Depression,
 
         etc = -1
     }
@@ -302,6 +303,18 @@ public class TaskState
                     target.RpcCheckAndMurder(target);
                     player.RpcGuardAndKill();
                     Logger.Info($"船鬼完成任务击杀：{player.GetNameWithRole()} => {target.GetNameWithRole()}", "Crewpostor");
+                }
+            }
+            //特务做完工作了
+            if (player.Is(CustomRoles.SpecialAgent) && (CompletedTasksCount + 1) >= AllTasksCount)
+            {
+                if (player.Is(CustomRoles.Charmed))
+                {
+                    CustomWinnerHolder.ResetAndSetWinner(CustomWinner.Succubus);
+                }
+                else
+                {
+                    CustomWinnerHolder.ResetAndSetWinner(CustomWinner.Impostor);
                 }
             }
 

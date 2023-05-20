@@ -751,6 +751,9 @@ internal static class RPC
             case CustomRoles.DovesOfNeace:
                 Main.DovesOfNeaceNumOfUsed.Add(targetId, Options.DovesOfNeaceMaxOfUseage.GetInt());
                 break;
+            case CustomRoles.Rudepeople:
+                Main.RudepeopleNumOfUsed.Add(targetId, Options.RudepeoplekillMaxOfUseage.GetInt());
+                break;
         }
         HudManager.Instance.SetHudActive(true);
         if (PlayerControl.LocalPlayer.PlayerId == targetId) RemoveDisableDevicesPatch.UpdateDisableDevices();

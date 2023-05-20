@@ -206,6 +206,13 @@ public class PlayerGameOptionsSender : GameOptionsSender
                     : 300f;
                 AURoleOptions.EngineerInVentMaxTime = 1;
                 break;
+            case CustomRoles.Rudepeople:
+                AURoleOptions.EngineerCooldown =
+                    !Main.RudepeopleNumOfUsed.TryGetValue(player.PlayerId, out var count5) || count5 > 0
+                    ? Options.RudepeopleSkillCooldown.GetFloat()
+                    : 300f;
+                AURoleOptions.EngineerInVentMaxTime = 1;
+                break;
         }
 
         // 为迷惑者的凶手
@@ -214,6 +221,11 @@ public class PlayerGameOptionsSender : GameOptionsSender
             opt.SetVision(false);
             opt.SetFloat(FloatOptionNames.CrewLightMod, Options.BewilderVision.GetFloat());
             opt.SetFloat(FloatOptionNames.ImpostorLightMod, Options.BewilderVision.GetFloat());
+        }
+        // 为漫步者的凶手
+        if (Main.AllPlayerControls.Where(x => x.Is(CustomRoles.Rambler) && !x.IsAlive() && x.GetRealKiller()?.PlayerId == player.PlayerId).Count() > 0)
+        {
+            Main.AllPlayerSpeed[player.PlayerId] = Options.RamblerSpeed.GetFloat();
         }
 
         // 投掷傻瓜蛋啦！！！！！
@@ -253,6 +265,9 @@ public class PlayerGameOptionsSender : GameOptionsSender
                     break;
                 case CustomRoles.Reach:
                     opt.SetInt(Int32OptionNames.KillDistance, 2);
+                    break;
+                case CustomRoles.Rambler:
+                    Main.AllPlayerSpeed[player.PlayerId] = Options.RamblerSpeed.GetFloat();
                     break;
             }
         }

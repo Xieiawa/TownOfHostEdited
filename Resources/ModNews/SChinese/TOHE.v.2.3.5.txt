@@ -1,10 +1,10 @@
 #Number:100042
 #Title:TownOfHostEdited v2.3.5
-#SubTitle:★★★★老天保佑没有Bug★★★★
+#SubTitle:★★★★TOHE就此结束★★★★
 #ShortTitle:★TOHE v2.3.5
 #Date:2023-5-15T00:00:00Z
 #-----------------------------
-希望这是TOH更新前的最后一个版本
+TOHE就此结束
 
 
 ## 对应官方版本

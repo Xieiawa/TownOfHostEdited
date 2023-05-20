@@ -48,6 +48,7 @@
 "# 隐藏 / Hidden"
 "Sunnyboy","阳光开朗大男孩","Sunnyboy","Солнечный Мальчик","陽光開朗大男孩","Chico Soleado"
 "Bard","吟游诗人","Bard","Бард","吟遊詩人","Bard"
+"LostCrew","失落的船员"
 
 "# 原版职业 / Vanilla"
 "Crewmate","船员","Crewmate","Член Экипажа","船員","Tripulante"
@@ -97,6 +98,8 @@
 "Hangman","刽子手","Hangman","Вешатель","劊子手","Hangman"
 "Swooper","隐匿者","Swooper","Невидимка","隱身人",""
 "Crewpostor","船鬼","CrewPostor","Двуликий","船鬼",""
+"Depressed","抑郁者"
+"SpecialAgent","特务"
 
 "# 船员阵营 / Crewmates"
 "Luckey","幸运儿","Luckey","Удачник","幸運兒","Suertudo"
@@ -129,6 +132,7 @@
 "Mediumshiper","通灵师","Medium","Медиум","通靈師","通灵师"
 "Observer","观察者","Observer","Аудитор","窺視者",""
 "DovesOfNeace","和平之鸽","Dove of Peace","Пацифист","和平之鴿",""
+"Rudepeople","挑衅者"
 
 "# 中立阵营 / Neutrals"
 "Jester","小丑","Jester","Шут","小丑","小丑"
@@ -177,6 +181,9 @@
 "Charmed","魅魔随从","Charmed","Зачарован","魅魔小弟",""
 "Bait","诱饵","Bait","Байт","誘餌","Bait"
 "Trapper","陷阱师","Beartrap","Капкан","設陷者","陷阱师"
+"Bitch","贱人"
+"Rambler","漫步者"
+"Destroyers","毁尸者"
 
 "## 附加职业作为前缀时 / Prefixes for Add-ons"
 
@@ -199,6 +206,9 @@
 "Prefix.Reach","持枪","Reach ","Длиннолап ","長槍",""
 "Prefix.Bait","诱饵","Bait ","Байт ","誘餌",""
 "Prefix.Trapper","陷阱","Beartrap ","Капкан ","設陷",""
+"Prefix.Bitch","贱人"
+"Prefix.Rambler","漫步"
+"Prefix.Destroyers","毁尸"
 
 "## 以下是职业简介（显示在开局以及任务栏的文本）/ Shows at Impostor/Crewmate screen"
 
@@ -244,6 +254,8 @@
 "HangmanInfo","就由我，来结束你的生命","I will decide when your life will end","Я решу когда твоя жизнь окончится","我將會結束你的生命","就由我，来结束你的生命"
 "SwooperInfo","感受未知的恐惧吧","Turn invisible temporarily","Становитесь невидимым на какое-то время","一道風掠過，所有人恐懼",""
 "CrewpostorInfo","这是场完美的犯罪","Kill by completing tasks","Убивай, выполняя задания","誰又能知道我是披著羊皮的狼呢?",""
+"DepressedInfo","我自闭了，不想丸辣"
+"SpecialAgentInfo","没点能力怎么能成为特务呢？"
 
 "# 船员阵营 / Crewmate descriptions"
 "LuckeyInfo","你擅长治疗内鬼的低血压","Your Killer may Miss the Kill","Ваш убийца может промазать по вам","是生是死，看你是歐還是非","你擅长治疗内鬼的低血压"
@@ -277,6 +289,7 @@
 "MediumshiperInfo","若君心存不甘，不妨和我谈谈","Talk with ghosts","Разговаривайте с призраками","若君心存不甘，不妨和我談談","若君心存不甘，不妨和我谈谈"
 "ObserverInfo","亲眼所见，亦非真实","You can see all shield-animations","Вы видите анимации сломанных щитов","他的盾沒了?",""
 "DovesOfNeaceInfo","何必打打杀杀呢？","Vent to Reset Everyone's Kill CD","А зачем убивать?","何必打打殺殺呢?",""
+"RudepeopleInfo","没*东西"
 
 "# 中立阵营 / Neutral descriptions"
 "ArsonistInfo","乖乖站好！","Douse Everyone and Ignite","Облейте всех игроков, а потом подожгите","燒吧，燒吧，燃燒吧","乖乖站好！"
@@ -324,6 +337,9 @@
 "ReachInfo","大人，时代变啦！","You have a longer kill range","У вас самая большая дальность убийства","你有更長的殺人距離",""
 "BaitInfo","好消息，杀了我可以吃席","Your Killer self-reports your body","Убийца моментально саморепнет ваше тело","犧牲小我，完成大我","好消息，杀了我可以吃席"
 "TrapperInfo","大奖小奖，能记住就是好奖","Freeze your killer for a few seconds","Замораживаете своего убийцу на несколько секунд","誘捕你的敵人","大奖小奖，能记住就是好奖"
+"BitchInfo","我又跳回来啦，欸又回去啦"
+"RamblerInfo","啊欸嘿我就走的慢"
+"DestroyersInfo","嘿！这是艺术品"
 
 "# 其它 / Other descriptions"
 "GMInfo","开局死的冤魂隔岸观火","Spectate the Chaos!","Вы Мастер Игры, наслаждайтесь хаосом!","當吃瓜群眾在一旁看戲吧","开局死的冤魂隔岸观火"
@@ -332,6 +348,7 @@
 "# 隐藏 / Hidden descriptions"
 "SunnyboyInfo","这个角色的建立究竟有什么意义","Shine, Shine my sunshine!","Свети, свети солнышко моё!","這個角色的建立到底有甚麼用","这个角色的建立究竟有什么意义"
 "BardInfo","请让我赋诗一首","Poem's grace, murder's trace, a rhythmic dance in dark embrace.","Поэма для вас, умрите сейчас!","請讓我賦詩一首","请让我赋诗一首"
+"LostCrewInfo","我 是 可 疑 的！！！！"
 
 "## 以下是职业描述（使用/m或/r指令后得到的文本）"
 
@@ -375,6 +392,8 @@
 "HangmanInfoLong","(内鬼阵营):\n刽子手在变形期间的击杀方式为绞杀，绞杀无视目标的任何状态例如医生的护盾、保镖的守护、大明星的技能等，被绞杀的玩家不会留下尸体，也不会触发其任何技能例如老兵反杀、幸运儿挡伤等（包括附加职业），此外，灵媒也不会得到提示。","(Impostors):\nThe killing method of the Hangman during the shapeshifting is strangling. Strangling ignores any status of the target, such as the shield of the Medic, the protection of the Bodyguard, the skills of the Super Star, etc. The strangled player will not leave a dead body, nor will it trigger any of its skills For example, Veteran kill back, Luckey stay alive, etc. (including additional roles), in addition, Seer will not be prompted.","(Предатель):\nВешатель убивает игроков, душа их. Удушение игнорирует любой вид защиты, такой как щит Медика, защита Телохранителя и тд. Игрок, которого задушили, не оставит тела и не активирует ни одну из способностей, таких как самозащита Ветерана, удача Удачника. Не появляется для Экстрасенса.","(偽裝者陣營):\n劊子手在變形時的殺人方式為絞殺，絞殺下將會無視任何一切可保護受害者不死亡的職業、附加效果和附加職業等等，例如軍醫的護盾、保鑣同歸於盡、大明星的技能，此外被動技能也不會生效，例如老兵反殺，幸運兒擋傷等等，被絞殺的玩家將不會留下屍體，並且也不會顯示被殺動畫。此外，由於不會留下屍體，因此靈媒也會不會收到任何提示。","(内鬼阵营):\n刽子手在变形期间的击杀方式为绞杀，绞杀无视目标的任何状态例如医生的护盾、保镖的守护、大明星的技能等，被绞杀的玩家不会留下尸体，也不会触发其任何技能例如老兵反杀、幸运儿挡伤等（包括附加职业），此外，灵媒也不会得到提示。"
 "SwooperInfoLong","(内鬼阵营):\n隐匿者无法正常使用管道。但可以通过跳管进入隐身状态，再次跳管则取消隐身状态。","(Impostors):\nThe Swooper can Vent to temporarily turn invisible and vent again to cancel their invisibility phase. This means the Swooper can never vent normally, even when swooping is on cooldown. (Note: The game will forcibly make you turn visible when the swoop duration ends, no matter if you vent or not.)","(Предатель):\nНевидимка не может пользоваться вентиляцией. Прыгнув в вентиляцию, Невидимку выпихивает и делает невидимым на определённое время.","(偽裝者陣營):\n隱身人可以通過進入管道來隱身，在隱身情況下，除了自己以外其他人都看不到隱身人的存在。(包括幽靈)\n請注意: 由於技能是使用管道來觸發，因此隱身人無法正常使用管道。",""
 "CrewpostorInfoLong","(内鬼阵营):\n船鬼拥有任务，每当船鬼完成任务时，距离船鬼最近的玩家就会死亡。","(Team Impostor):\nYou kill the nearest player whenever you complete a task.","(Предатель):\nКогда Двуликий выполнит одно задание, он убивает самого ближайшего к нему игрока.","(偽裝者陣營):\n船鬼可以通過做任務來殺人，每當船鬼完成任務時，距離船鬼最近的玩家就會死亡。",""
+"DepressedInfoLong","(内鬼阵营):\n当抑郁者击杀时，有几率和被击杀者同归于尽，同时抑郁者的死因会被设置为“抑郁”"
+"SpecialAgentInfoLong","(内鬼阵营):\n当特务完成所有任务时，内鬼胜利，如果被魅魔魅惑则做完任务时魅魔胜利。\n击杀特务时有几率会被反杀"
 
 "# 船员阵营 / Crewmates descriptions"
 "LuckeyInfoLong","(船员阵营):\n幸运儿被击杀时，有概率抵挡这次死亡，具体概率根据房主设定。抵挡生效时凶手会看到幸运儿的身上出现护盾破碎的效果，但幸运儿自己什么都不会知道。","(Crewmates):\nWhen a player attempts to kill the Luckey, there is a probability for the Luckey to evade the kill, and the specific probability is set by the host. When the evasion takes effect, the killer will see the shield-animation on Luckey's body, but Luckey themselves will not know anything.","(Член Экипажа):\nУ Удачника будет возникать определенная вероятность того, что Убийца не сможет убить Удачника, вероятность устанавливается в зависимости от настроек Хоста. Убийца увидит эффект разрушения щита ангела на теле Удачника, но сам Удачник при этом ничего не узнает.","(船員陣營):\n幸運兒被嘗試殺死時，有機率抵擋這次死亡，具體機率依房主設定。抵擋生效時兇手會看到幸運兒身上出現盾牌破碎的效果，但幸運兒自己甚麼都不知道。此外，如果幸運兒被劊子手絞殺，那麼技能將不會生效。","(船员阵营):\n幸运儿被击杀时，有概率抵挡这次死亡，具体概率根据房主设定。抵挡生效时凶手会看到幸运儿的身上出现护盾破碎的效果，但幸运儿自己什么都不会知道。"
@@ -408,6 +427,7 @@
 "MediumshiperInfoLong","(船员阵营):\n当场上有玩家被击杀，通灵师会收到提示。每次会议召开时通灵师会与被报告的尸体建立联系（只有被报告的尸体而不是被发现的所有尸体），在本次会议结束前，被害者拥有一次机会回答通灵师的问题，只能回答是或否。请注意：通灵师不会成为胆小鬼。","(Crewmates):\nThe Medium can establish contact with a dead player after their dead body is reported. The player who reports doesn't have to be the Medium. The dead player can answer once with a YES or a NO to the Medium's question which only the Medium will see (the dead player can use /ms yes or /ms no). Note: Medium won't be Oblivious.","(Член Экипажа):\nМедиум может установить контакт с мертвым игроком, зарепортив его труп. Он может один раз ответить Да или НЕТ на вопрос Медиума, ответ на вопрос увидит только Медиум. \nМертвый игрок может использовать /ms Yes или /ms No. Примечание: Медиум не будет Забывчивым.","(船員陣營):\n當場上有玩家被殺死，通靈師會收到提示。當每次報告屍體時通靈師可以與被報告的屍體建立聯繫(只有被報告的而不是全部被害者)，在此次會議結束前，被害者擁有一次機會回答通靈師的問題，只能回答是或否。請注意: 通靈師不會成為膽小鬼。","(船员阵营):\n当场上有玩家被击杀，通灵师会收到提示。通灵师报告尸体后可以与被害者建立联系，在本次会议结束前，被害者拥有一次机会回答通灵师的问题，只能回答是或否。请注意：通灵师不会成为胆小鬼。"
 "ObserverInfoLong","(船员阵营):\n观察者可以看到其他玩家的碎盾动画。首次会议召开前观察者的技能不会生效。","(Crewmates):\nThe Observer can see all shield animations caused by other players after the first meeting.","(Член Экипажа):\nАудитор видят сломанные щиты. Навык видения срабатывает с первого собрания.","(船員陣營):\n窺視者可以看到其他玩家的碎盾動畫。首次會議召開前窺視者的技能不會生效。",""
 "DovesOfNeaceInfoLong","(船员阵营):\n当和平之鸽可以通过使用通风管道进行歌颂，在场所有拥有击杀键的玩家的击杀/技能冷却时间会被重置。当和平之鸽成为叛徒时歌颂只对船员生效。","(Crewmates):\nWhen the Dove of Peace vents, they will reset the kill cooldown for every player with a kill button. When they become a Madmate, this ability will only work on Crewmates.","(Член Экипажа):\nКогда Пацифист использует вентиляцию, время перезарядки убийства/навыков всех игроков с кнопкой убийства будет сброшено. Когда Пацифист становится предателем, навык действует только на Членов Экипажа.",""(船員陣營):\n和平之鴿可以通過進入通風管來進行歌頌，",""
+"RudepeopleInfoLong","(船员阵营):\n当挑衅者跳管时会开启挑衅阶段，在挑衅阶段杀死挑衅者时挑衅者会和凶手同归于尽。"
 
 "# 中立阵营 / Neutrals descriptions"
 "ArsonistInfoLong","(中立阵营):\n纵火犯可以通过对玩家点击击杀按钮并跟随其数秒来完成涂油，开始涂油以及涂油成功时会显示护盾破碎的动画作为提示（仅自己可见）。当所有存活玩家都被纵火犯涂油后，纵火犯可以通过跳通风管来点火，并单独获得胜利。\n\n玩家名显示「△」表示涂油中\n玩家名显示「▲」表示已涂油。","(Neutrals):\nThe Arsonist can douse by clicking the kill button on the player and following them for a few seconds. When the dousing starts and it's successful, a shield animation will be displayed as a reminder (only visible to themselves). When the Arsonist has doused all surviving players, the Arsonist can vent to start the fire and win alone.\n\nIf the player name shows 「△」, that means they are being doused;\nif the player name shows 「▲」, it means they have been completely doused.","(нейтральный): поджигатель может закончить смазку, нажав на кнопку убийства игрока и следуя за ним в течение нескольких секунд, начать мазать, а также показать анимацию разбитого щита, когда она будет успешной (только для себя). После того, как все выжившие игроки были смазаны поджигателем, поджигатель мог воспламенить его, перепрыгнув через вентиляционную трубу и одержать победу в одиночку. \ n что n игрок показыва「△」заяв в смазыва \ что n что игрок показыва「▲」что смазыва.","(中立陣營):\n縱火犯可以通過對玩家使用殺人鍵並跟隨數秒來澆油，開始以及結束澆油時會出現盾牌破碎的效果作為提示。當所有存活玩家都被縱火犯澆上油時，縱火犯可以以跳管道的方式來點火，並單獨獲勝。\n\n玩家名字顯示「△」表示澆油中\n顯示「▲」表示已經澆油。","(中立阵营):\n纵火犯可以通过对玩家点击击杀按钮并跟随其数秒来完成涂油，开始涂油以及涂油成功时会显示护盾破碎的动画作为提示（仅自己可见）。当所有存活玩家都被纵火犯涂油后，纵火犯可以通过跳通风管来点火，并单独获得胜利。\n\n玩家名显示「△」表示涂油中\n玩家名显示「▲」表示已涂油。"
@@ -454,6 +474,9 @@
 "ReachInfoLong","(附加职业)\n只有拥有击杀键的玩家能持枪。持枪的玩家的击杀键交互距离比一般人长。","(Add-on)\nOnly roles with a kill button can get this add-on. You have the longest kill range possible in the game, unlike everyone else.","(Атрибут):\nДлиннолап имеет самую большую дальность убийства в игре, в отличие от всех остальных убийц.\nПримечание: Только роли с кнопкой убийства могут получить этот Атрибут.","(附加職業):\n只有擁有殺人鍵的玩家能具有長槍效果。具有長槍效果的玩家殺人距離會比一般人長。",""
 "BaitInfoLong","(附加职业):\n诱饵被击杀时，击杀诱饵的凶手将被迫报告诱饵的尸体。但诱饵被清道夫或清理工击杀时技能会失效。","(Add-ons):\nWhen the Bait is killed, the murderer who killed the Bait will be forced to self-report the Bait's body. However, this won't happen when the Bait is killed by a Scavenger or a Cleaner. The report may have a delay according to Host's settings.","(Атрибут):\nКогда Байта убивают, он заставляет убившего игрока \nмоментально зарепортить ваш труп.","(附加職業):\n當誘餌被殺時，殺死誘餌的兇手將會立刻自行報告誘餌的屍體，但是當清道夫殺死誘餌時，誘餌不會觸發技能。","(附加职业):\n诱饵被击杀时，击杀诱饵的凶手将被迫报告诱饵的尸体。但诱饵被清道夫或清理工击杀时技能会失效。"
 "TrapperInfoLong","(附加职业):\n陷阱师被击杀时，凶手一段时间内将不能移动。","(Add-ons):\nWhen the Beartrap is killed, the Beartrap freezes their killer in place for a configurable amount of time.","(Атрибут):\nПосле того как Капкан убьют, то его убийца будет обездвижен на несколько секунд. (время зависит от настроек)","(附加職業):\n當設陷者被殺時，那麼殺他的兇手將會一段時間內無法移動。","(船员阵营):\n陷阱师被击杀时，凶手一段时间内将不能移动。"
+"BitchInfoLong","(附加职业)\n投给贱人的票数变为114514，因为很贱:)\n小丑不会成为贱人。"
+"RamblerInfoLong","(附加职业)\n漫步者的移动速度很慢，但是击杀漫步者的人移动速度也会变得很慢。\n涉及增加移动速度一类的都不会成为漫步者。"
+"DestroyersInfoLong","(附加职业)\n只有除自爆兵和诡雷以外的内鬼会成为毁尸者。毁尸者每一次击杀都会让被击杀者的死因随机化。"
 
 "# 其它 / Other long description"
 "GMInfoLong","(房主):\n看我干啥，我只是个开局就死的冤魂，静静地吃瓜而已。","(None):\nThe GM (Game Master) is an observer role.\nTheir presence has no effect on the game, and all players know who the GM is. The GM role will be assigned to the host, who will automatically become a ghost at the start of the game.","(Никто):\nGM (Мастер Игры) — это роль, которая наблюдает за игрой в роле призрака. \nОн не влияет на игру, и все игроки всегда знают кто Мастер Игры. Всегда назначается только хосту лобби и становится призраком в самом начале игры.","(房主):\n看我幹嘛，我只是開始遊戲時就在冥界吃瓜而已。","(房主):\n看我干啥，我只是个开局就死的冤魂，静静地吃瓜而已。"
@@ -461,6 +484,7 @@
 "# 隐藏 / Hidden long descriptions"
 "SunnyboyInfoLong","(中立阵营):\n阳光开朗大男孩可以通过生命面板查看他人的生命状态。阳光开朗大男孩在场时游戏不会因人数优势结束（例如内鬼人数大于船员或没有存活内鬼），游戏结束时若阳光开朗大男孩死亡，则阳光开朗大男孩跟随胜利阵营一起胜利。","(Neutrals):\nThe Sunnyboy can check the life status of others through the life panel. When the Sunnyboy is alive, the game will not end due to a numerical advantage (for example, the number of imporstors is greater than the crew or there are no survivors). If the Sunnyboy dies at the end of the game, the Sunnyboy will win with the winning team.","(Добрый - Нейтрал):\n Солнечний мальчик может просматривать жизненный статус других людей через планшет. Когда присутствует Солнечний Мальчик, игра не заканчивается из-за преимущества в количестве людей (например, количество Предателей больше, чем Членов Экипажа, или Предателей в живых нет). Если Солнечний мальчик умрет в конце игры, Солнечний мальчик выиграет с выжившей коммандой.","(中立陣營):\n陽光開朗大男孩可以通過心電圖來查看他人的生命徵象。陽光開朗大男孩在場時遊戲不會因人數優勢而結束(例如偽裝者人數大於船員人數或沒有剩餘的存活偽裝者)，遊戲結束時如果陽光開朗大男孩死亡，則陽光開朗大男孩隨著勝利陣營一同獲勝。","(中立阵营):\n阳光开朗大男孩可以通过生命面板查看他人的生命状态。阳光开朗大男孩在场时游戏不会因人数优势结束（例如内鬼人数大于船员或没有存活内鬼），游戏结束时若阳光开朗大男孩死亡，则阳光开朗大男孩跟随胜利阵营一起胜利。"
 "BardInfoLong","(内鬼阵营):\n吟游诗人在场时，驱逐确认将会显示为吟游诗人创作的句子。每当吟游诗人完成一次创作，则吟游诗人的击杀冷却永久减半。","(Impostor):\nWhen a bard is alive, the exile confirmation will display a sentence composed by the bard. Whenever the bard completes a creation, the bard's kill cooldown is permanently halved.","(Предатель):\nКогда Бард жив, в подтверждении изгнания будет отображаться предложение, составленное бардом. Всякий раз, когда бард завершает создание предложений, время восстановления после убийства барда постоянно уменьшается вдвое.","(偽裝者陣營):\n吟遊詩人在場時，逐出確認將會顯示為吟遊詩人創作的句子。每當吟遊詩人完成一次創作，則吟遊詩人的殺人冷卻永久減半。","(内鬼阵营):\n吟游诗人在场时，驱逐确认将会显示为吟游诗人创作的句子。每当吟游诗人完成一次创作，则吟游诗人的击杀冷却永久减半。"
+"LostCrewInfoLong","(船员阵营):\n当击杀失落的船员时，凶手的名字会被提示“我 是 可 疑 的！！！”然后凶手的屏幕每过一段时间就会闪烁破坏的红光，在最后一次闪光后凶手就会被充满怨恨的失落的船员杀死"
 
 "## 模式选项 / Settings"
 "DisableMeeting","禁用会议与报告尸体","Disable Meetings","Отключить Собрания","禁用緊急會議以及報告屍體","禁用会议与报告尸体"
@@ -894,6 +918,13 @@
 "MediumshiperOnlyReceiveMsgFromCrew","只会收到来自<color=#8cffff>船员</color>的消息（包括<color=#ff1919>背叛</color>和<color=#cf6acd>魅惑</color>）","Receive messages only from <color=#8cffff>Crewmates</color> (including <color=#ff1919>Madmates</color> and <color=#cf6acd>Charmed</color> Players)","Получать сообщения только от <color=#8cffff>Членов Экипажа</color> (включая <color=#ff1919>Безумцев</color> и <color=#cf6acd>Зачарованных</color>)","只會收到來自<color=#8cffff>船員</color>的消息(包括<color=#ff1919>背叛</color>的和<color=#cf6acd>被魅惑</color>的)",""
 "DovesOfNeaceCooldown","歌颂冷却时间","Ability Cooldown","Откат способности","歌頌冷卻時間",""
 "DovesOfNeaceMaxOfUseage","歌颂次数上限","Max Number of Ability Uses","Количество способностей","歌頌次數上限",""
+"DepressedKillCooldown","抑郁者击杀冷却"
+"DepressedIdioctoniaProbability","抑郁者自杀概率"
+"RudepeopleSkillDuration","挑衅持续时间"
+"RudepeopleSkillCooldown","挑衅技能冷却时间"
+"RudepeoplekillMaxOfUseage","挑衅技能使用上限"
+"RamblerSpeed","漫步者移动速度"
+"SpecialAgentrobability","反杀触发概率"
 
 "## 死因 / Death Reasons"
 "DeathReason.Kill","被杀","Kill","Убит","被殺","被杀"
@@ -921,6 +952,7 @@
 "DeathReason.LossOfHead","绞杀","Strangled","Задушен","絞殺","绞杀"
 "DeathReason.Trialed","审判","Judged","Засужен","審判","审判"
 "DeathReason.etc","其它","Other","Другое","其他","其它"
+"DeathReason.Depression","抑郁"
 "Alive","存活","Alive","Выжил","存活","存活"
 "Win","胜利"," Wins!"," Победили","勝利","胜利"
 "Last-","仅存","Last ","Последний ","僅存","仅存"
@@ -1049,6 +1081,10 @@
 "DovesOfNeaceOnGuard","技能已生效，剩余{0}次","Ability used, {0} uses remain","Навык активирован, осталось ещё {0} ","和平技能已生效，剩餘{0}次",""
 "DovesOfNeaceMaxUsage","已达到技能使用次数上限","Ability use limit reached","Вы использовали все свои способности","已達到技能使用次數上限",""
 "DovesOfNeaceSkillNotify","和平之鸽重置了您的击杀/技能冷却","Dove of Peace Reset your kill CD","Пацифист сбросил ваш откат убийства / способности","和平之鴿重置了您的殺人/技能冷卻",""
+"IAMSUS!!!","我 是 可 疑 的 ！！！"
+"RudepeopleMaxUsage","挑衅技能用完了"
+"RudepeopleOnGuard","正在挑衅"
+"RudepeopleOffGuard","挑衅技能已失效，剩余{0}次"
 
 "## 信息 / Message"
 "Message.SetToSeconds","信息发送冷却时间为【{0}】秒","Set to 【{0}】 seconds.","Установлен на 【{0}】 секунды","訊息傳送冷卻時間設為【{0}】秒","信息发送冷却时间为【{0}】秒"

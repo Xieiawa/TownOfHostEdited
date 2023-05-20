@@ -86,7 +86,8 @@ public static class Divinator
                 CustomRoles.Jackal or
                 CustomRoles.Mario or
                 CustomRoles.Cleaner or
-                CustomRoles.Crewpostor
+                CustomRoles.Crewpostor or
+                 CustomRoles.SpecialAgent
                 => "Honest",
 
                 CustomRoles.SerialKiller or
@@ -98,7 +99,8 @@ public static class Divinator
                 CustomRoles.Arsonist or
                 CustomRoles.Innocent or
                 CustomRoles.FFF or
-                CustomRoles.Greedier
+                CustomRoles.Greedier or
+                CustomRoles.Rudepeople
                 => "Impulse",
 
                 CustomRoles.Vampire or
@@ -169,7 +171,8 @@ public static class Divinator
                 CustomRoles.CursedWolf or
                 CustomRoles.OverKiller or
                 CustomRoles.Hangman or
-                CustomRoles.Mortician
+                CustomRoles.Mortician or
+                 CustomRoles.LostCrew
                 => "Disturbed",
 
                 CustomRoles.Glitch or

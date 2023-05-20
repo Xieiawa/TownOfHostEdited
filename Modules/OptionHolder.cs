@@ -219,6 +219,13 @@ public static class Options
     public static OptionItem NeutralCanBeTrapper;
     public static OptionItem DovesOfNeaceCooldown;
     public static OptionItem DovesOfNeaceMaxOfUseage;
+    public static OptionItem RamblerSpeed;
+    public static OptionItem DepressedIdioctoniaProbability;
+    public static OptionItem RudepeopleSkillDuration;
+    public static OptionItem RudepeopleSkillCooldown;
+    public static OptionItem RudepeoplekillMaxOfUseage;
+    public static OptionItem DepressedKillCooldown;
+    public static OptionItem SpecialAgentrobability;
 
     // タスク無効化
     public static OptionItem DisableTasks;
@@ -331,6 +338,7 @@ public static class Options
     public static OverrideTasksData TransporterTasks;
     public static OverrideTasksData WorkaholicTasks;
     public static OverrideTasksData CrewpostorTasks;
+    public static OverrideTasksData SpecialAgentTasks;
 
     // その他
     public static OptionItem FixFirstKillCooldown;
@@ -601,6 +609,15 @@ public static class Options
         QuickShooter.SetupCustomOption();
         Hangman.SetupCustomOption();
         Swooper.SetupCustomOption();
+        SetupRoleOptions(1054564, TabGroup.ImpostorRoles, CustomRoles.Depressed);
+        DepressedIdioctoniaProbability = IntegerOptionItem.Create(10251515, "DepressedIdioctoniaProbability", new(0, 100, 5), 50, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.Depressed])
+        .SetValueFormat(OptionFormat.Percent);
+        DepressedKillCooldown = FloatOptionItem.Create(908446, "DepressedKillCooldown", new(10f, 100f, 1f), 20f, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.Depressed])
+            .SetValueFormat(OptionFormat.Seconds);
+        SetupRoleOptions(15415645, TabGroup.ImpostorRoles, CustomRoles.SpecialAgent);
+        SpecialAgentTasks = OverrideTasksData.Create(9455452, TabGroup.ImpostorRoles, CustomRoles.SpecialAgent);
+        SpecialAgentrobability = IntegerOptionItem.Create(151635, "SpecialAgentrobability", new(0, 100, 5), 50, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.SpecialAgent])
+        .SetValueFormat(OptionFormat.Percent);
 
         // Crewmate
         SetupRoleOptions(102255, TabGroup.CrewmateRoles, CustomRoles.NiceGuesser);
@@ -677,6 +694,13 @@ public static class Options
              .SetValueFormat(OptionFormat.Seconds);
         DovesOfNeaceMaxOfUseage = IntegerOptionItem.Create(151574, "DovesOfNeaceMaxOfUseage", new(1, 999, 1), 3, TabGroup.CrewmateRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.DovesOfNeace])
          .SetValueFormat(OptionFormat.Times);
+        SetupRoleOptions(451515, TabGroup.CrewmateRoles, CustomRoles.Rudepeople);
+        RudepeopleSkillCooldown = FloatOptionItem.Create(55645131, "RudepeopleSkillCooldown", new(1f, 180f, 1f), 20f, TabGroup.CrewmateRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.Rudepeople])
+            .SetValueFormat(OptionFormat.Seconds);
+        RudepeopleSkillDuration = FloatOptionItem.Create(807412747, "RudepeopleSkillDuration", new(1f, 999f, 1f), 20f, TabGroup.CrewmateRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.Rudepeople])
+            .SetValueFormat(OptionFormat.Seconds);
+        RudepeoplekillMaxOfUseage = IntegerOptionItem.Create(75345351, "RudepeoplekillMaxOfUseage", new(1, 999, 1), 10, TabGroup.CrewmateRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.Rudepeople])
+            .SetValueFormat(OptionFormat.Times);
 
         // Neutral
         SetupRoleOptions(50500, TabGroup.NeutralRoles, CustomRoles.Arsonist);
@@ -749,6 +773,10 @@ public static class Options
         NeutralCanBeTrapper = BooleanOptionItem.Create(20805, "NeutralCanBeTrapper", true, TabGroup.Addons, false).SetParent(CustomRoleSpawnChances[CustomRoles.Trapper]);
         TrapperBlockMoveTime = FloatOptionItem.Create(20810, "TrapperBlockMoveTime", new(1f, 180f, 1f), 5f, TabGroup.Addons, false).SetParent(CustomRoleSpawnChances[CustomRoles.Trapper])
             .SetValueFormat(OptionFormat.Seconds);
+        SetupAdtRoleOptions(6052146, CustomRoles.Bitch, canSetNum: true);
+        SetupAdtRoleOptions(6052954, CustomRoles.Rambler, canSetNum: true);
+        RamblerSpeed = FloatOptionItem.Create(60504874, "RamblerSpeed", new(0.1f, 1f, 0.1f), 2.5f, TabGroup.Addons, false).SetParent(CustomRoleSpawnChances[CustomRoles.Rambler]);
+        SetupAdtRoleOptions(15151651, CustomRoles.Destroyers, canSetNum: true);
 
         SetupAdtRoleOptions(6050390, CustomRoles.Madmate, canSetNum: true, canSetChance: false);
         MadmateSpawnMode = StringOptionItem.Create(6060444, "MadmateSpawnMode", madmateSpawnMode, 0, TabGroup.Addons, false).SetParent(CustomRoleSpawnChances[CustomRoles.Madmate]);

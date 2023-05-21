@@ -928,6 +928,7 @@
 "RudepeoplekillMaxOfUseage","挑衅技能使用上限"
 "RamblerSpeed","漫步者移动速度"
 "SpecialAgentrobability","反杀触发概率"
+"HatarakiManrobability","反杀触发概率"
 
 "## 死因 / Death Reasons"
 "DeathReason.Kill","被杀","Kill","Убит","被殺","被杀"

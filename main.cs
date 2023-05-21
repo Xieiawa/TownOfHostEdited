@@ -16,16 +16,16 @@ using UnityEngine;
 [assembly: AssemblyVersion(TOHE.Main.PluginVersion)]
 namespace TOHE;
 
-[BepInPlugin(PluginGuid, "TOHEXi", PluginVersion)]
+[BepInPlugin(PluginGuid, "TOHEX", PluginVersion)]
 [BepInIncompatibility("jp.ykundesu.supernewroles")]
 [BepInProcess("Among Us.exe")]
 public class Main : BasePlugin
 {
     // == プログラム設定 / Program Config ==
-    public static readonly string ModName = "TOHEXi";
+    public static readonly string ModName = "TOHEX";
     public static readonly string ModColor = "#ffc0cb";
     public static readonly bool AllowPublicRoom = true;
-    public static readonly string ForkId = "TOHEXi";
+    public static readonly string ForkId = "TOHEX";
     public const string OriginalForkId = "OriginalTOH";
     public static HashAuth DebugKeyAuth { get; private set; }
     public const string DebugKeyHash = "c0fd562955ba56af3ae20d7ec9e64c664f0facecef4b3e366e109306adeae29d";
@@ -33,7 +33,7 @@ public class Main : BasePlugin
     public static ConfigEntry<string> DebugKeyInput { get; private set; }
     public static readonly string MainMenuText = "喜！瓜！";
     public const string PluginGuid = "com.xi.townofhosteditedxi";
-    public const string PluginVersion = "1.0.2";
+    public const string PluginVersion = "1.0.21";
     public const int PluginCreate = 7;
 
     public static readonly bool ShowQQButton = true;

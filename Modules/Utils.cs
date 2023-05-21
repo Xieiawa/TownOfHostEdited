@@ -923,7 +923,10 @@ public static class Utils
             if (player.AmOwner)
             {
                 if (GameStates.IsOnlineGame)
-                    name = $"<color=#ffd6ec>TOHEXi</color><color=#baf7ca>❤</color>" + name;
+                    name = $"<color=#ffd6ec>TOHEXi</color><color=#baf7ca>♡</color>" + name;
+                    #if CANARY
+                        name = $"<color=#ffd6ec>TOHEXi测试房</color><color=#baf7ca>♡</color>" + name;
+                    #endif
                 if (Options.CurrentGameMode == CustomGameMode.SoloKombat)
                     name = $"<color=#f55252><size=1.7>{GetString("ModeSoloKombat")}</size></color>\r\n" + name;
             }

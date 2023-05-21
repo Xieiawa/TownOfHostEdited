@@ -1,7 +1,7 @@
 #Number:100043
 #Title:TownOfHostEditedXi v1.0.0
 #SubTitle:★★★★TOHEXi出现啦！★★★★
-#ShortTitle:★TOHEXi v1.0.0
+#ShortTitle:★TOHEX v1.0.0
 #Date:2023-5-20T00:00:00Z
 #-----------------------------
 希望这是TOH更新前的最后一个版本

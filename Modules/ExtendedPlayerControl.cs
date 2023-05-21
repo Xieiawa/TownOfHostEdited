@@ -612,6 +612,12 @@ static class ExtendedPlayerControl
             case CustomRoles.Succubus:
                 Succubus.SetKillCooldown(player.PlayerId);
                 break;
+            case CustomRoles.Depressed:
+                Main.AllPlayerKillCooldown[player.PlayerId] = Options.DepressedKillCooldown.GetFloat();
+                break;
+            case CustomRoles.EvilGambler:
+                Main.AllPlayerKillCooldown[player.PlayerId] = Options.EvilGamblerKillCooldown.GetFloat();
+                break;
         }
         if (player.PlayerId == LastImpostor.currentId)
             LastImpostor.SetKillCooldown();

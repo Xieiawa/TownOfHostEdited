@@ -200,6 +200,9 @@ class HudManagerPatch
                     case CustomRoles.DovesOfNeace:
                         __instance.AbilityButton.buttonLabelText.text = GetString("DovesOfNeaceVentButtonText");
                         break;
+                    case CustomRoles.Rudepeople:
+                        __instance.AbilityButton.buttonLabelText.text = GetString("RudepeopleVetnButtonText");
+                        break;
                 }
 
                 //バウンティハンターのターゲットテキスト

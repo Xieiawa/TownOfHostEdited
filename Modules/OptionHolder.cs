@@ -227,6 +227,12 @@ public static class Options
     public static OptionItem DepressedKillCooldown;
     public static OptionItem SpecialAgentrobability;
     public static OptionItem HatarakiManrobability;
+    public static OptionItem EvilGamblerKillCooldown;
+    public static OptionItem EvilGamblerBetToWin;
+    public static OptionItem EvilGamblerBetToWinKillCooldown;
+    public static OptionItem EvilGamblerBetAndLoseKillCooldown;
+    public static OptionItem UnluckyEggsKIllUnluckyEggs;
+
 
     // タスク無効化
     public static OptionItem DisableTasks;
@@ -620,6 +626,15 @@ public static class Options
         SpecialAgentTasks = OverrideTasksData.Create(9455452, TabGroup.ImpostorRoles, CustomRoles.SpecialAgent);
         SpecialAgentrobability = IntegerOptionItem.Create(151635, "SpecialAgentrobability", new(0, 100, 5), 50, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.SpecialAgent])
         .SetValueFormat(OptionFormat.Percent);
+        SetupRoleOptions(1254423, TabGroup.ImpostorRoles, CustomRoles.EvilGambler);
+        EvilGamblerKillCooldown = FloatOptionItem.Create(1231241, "EvilGamblerKillCooldown", new(20f, 100f, 1f), 25f, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.EvilGambler])
+            .SetValueFormat(OptionFormat.Seconds);
+        EvilGamblerBetToWin = IntegerOptionItem.Create(2145475, "EvilGamblerBetToWin", new(0, 100, 5), 50, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.EvilGambler])
+       .SetValueFormat(OptionFormat.Percent);
+        EvilGamblerBetToWinKillCooldown = FloatOptionItem.Create(53454534, "EvilGamblerBetToWinKillCooldown", new(0f, 10f, 0.5f), 2.5f, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.EvilGambler])
+            .SetValueFormat(OptionFormat.Seconds);
+        EvilGamblerBetAndLoseKillCooldown = FloatOptionItem.Create(12315344, "EvilGamblerBetAndLoseKillCooldown", new(30f, 250f, 1f), 40f, TabGroup.ImpostorRoles, false).SetParent(CustomRoleSpawnChances[CustomRoles.EvilGambler])
+            .SetValueFormat(OptionFormat.Seconds);
 
         // Crewmate
         SetupRoleOptions(102255, TabGroup.CrewmateRoles, CustomRoles.NiceGuesser);
@@ -783,6 +798,9 @@ public static class Options
         SetupAdtRoleOptions(6052954, CustomRoles.Rambler, canSetNum: true);
         RamblerSpeed = FloatOptionItem.Create(60504874, "RamblerSpeed", new(0.1f, 1f, 0.1f), 2.5f, TabGroup.Addons, false).SetParent(CustomRoleSpawnChances[CustomRoles.Rambler]);
         SetupAdtRoleOptions(15151651, CustomRoles.Destroyers, canSetNum: true);
+        SetupAdtRoleOptions(141345, CustomRoles.UnluckyEggs, canSetNum: true);
+        UnluckyEggsKIllUnluckyEggs = FloatOptionItem.Create(234343543, "UnluckyEggsKIllUnluckyEggs", new(0, 100, 5), 50, TabGroup.Addons, false).SetParent(CustomRoleSpawnChances[CustomRoles.UnluckyEggs])
+       .SetValueFormat(OptionFormat.Percent);
 
         SetupAdtRoleOptions(6050390, CustomRoles.Madmate, canSetNum: true, canSetChance: false);
         MadmateSpawnMode = StringOptionItem.Create(6060444, "MadmateSpawnMode", madmateSpawnMode, 0, TabGroup.Addons, false).SetParent(CustomRoleSpawnChances[CustomRoles.Madmate]);

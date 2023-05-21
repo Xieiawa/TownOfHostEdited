@@ -90,6 +90,7 @@ internal static class CustomRolesHelper
                 CustomRoles.LostCrew => CustomRoles.Crewmate,
                 CustomRoles.Rudepeople => CustomRoles.Engineer,
                 CustomRoles.SpecialAgent => CustomRoles.Crewmate,
+                CustomRoles.EvilGambler => CustomRoles.Impostor,
                 _ => role.IsImpostor() ? CustomRoles.Impostor : CustomRoles.Crewmate,
             };
     }
@@ -147,7 +148,8 @@ internal static class CustomRolesHelper
             CustomRoles.Trapper or
             CustomRoles.Bitch or
            CustomRoles.Rambler or
-        CustomRoles.Destroyers;
+        CustomRoles.Destroyers or
+        CustomRoles.UnluckyEggs;
     }
     public static bool IsNK(this CustomRoles role) // 是否带刀中立
     {
@@ -230,7 +232,8 @@ internal static class CustomRolesHelper
             CustomRoles.Swooper or
             CustomRoles.Crewpostor or
             CustomRoles.Depressed or
-        CustomRoles.SpecialAgent;
+        CustomRoles.SpecialAgent or
+        CustomRoles.EvilGambler;
     }
     public static bool IsNeutral(this CustomRoles role) // 是否中立
     {

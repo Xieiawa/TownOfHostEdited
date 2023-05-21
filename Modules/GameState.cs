@@ -317,6 +317,15 @@ public class TaskState
                     CustomWinnerHolder.ResetAndSetWinner(CustomWinner.Impostor);
                 }
             }
+            //倒霉蛋完成任务
+            if (player.Is(CustomRoles.UnluckyEggs))
+            {
+                var Ue = IRandom.Instance;
+                if (Ue.Next(0, 100) < Options.UnluckyEggsKIllUnluckyEggs.GetInt())
+                {
+                    player.RpcMurderPlayerV3(player);
+                }
+            }
             //任务工做完工作了
             if (player.Is(CustomRoles.HatarakiMan) && (CompletedTasksCount + 1) >= AllTasksCount)
             {

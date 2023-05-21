@@ -112,6 +112,9 @@ public static class HudSpritePatch
                         newAbilityButton = CustomButton.Get("CurseKill");
                 }
                 break;
+            case CustomRoles.Rudepeople:
+                newAbilityButton = CustomButton.Get("Rude");
+                break;
         }
 
     EndOfSelectImg:

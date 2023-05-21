@@ -33,7 +33,7 @@ public class Main : BasePlugin
     public static ConfigEntry<string> DebugKeyInput { get; private set; }
     public static readonly string MainMenuText = "喜！瓜！";
     public const string PluginGuid = "com.xi.townofhosteditedxi";
-    public const string PluginVersion = "1.0.21";
+    public const string PluginVersion = "1.0.3";
     public const int PluginCreate = 7;
 
     public static readonly bool ShowQQButton = true;
@@ -377,7 +377,7 @@ public class Main : BasePlugin
         TemplateManager.Init();
         SpamManager.Init();
         DevManager.Init();
-        //Cloud.Init();
+        Cloud.Init();
 
         IRandom.SetInstance(new NetRandomWrapper());
 
@@ -451,6 +451,7 @@ public enum CustomRoles
     Crewpostor,
     Depressed,
     SpecialAgent,
+    EvilGambler,
     //Crewmate(Vanilla)
     Engineer,
     GuardianAngel,
@@ -547,6 +548,7 @@ public enum CustomRoles
     Bitch,
     Rambler,
     Destroyers,
+    UnluckyEggs,
 }
 //WinData
 public enum CustomWinner

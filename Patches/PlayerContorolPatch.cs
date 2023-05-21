@@ -359,14 +359,14 @@ class CheckMurderPatch
             if (rd.Next(0, 100) < Options.DepressedIdioctoniaProbability.GetInt())
             {
                 Main.PlayerStates[killer.PlayerId].deathReason = PlayerState.DeathReason.Depression;
-                killer.MurderPlayer(killer);
+                killer.RpcMurderPlayerV3(killer);
             }
         }
         //毁尸者毁尸
         if (killer.Is(CustomRoles.Destroyers))
         {
-            var rd = IRandom.Instance;
-            int rndNum = rd.Next(0, 100);
+            var Dy = IRandom.Instance;
+            int rndNum = Dy.Next(0, 100);
             if (rndNum >= 10 && rndNum < 20)
             {
                 Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Suicide;
@@ -402,6 +402,28 @@ class CheckMurderPatch
             if (rndNum >= 90 && rndNum < 100)
             {
                 Main.PlayerStates[target.PlayerId].deathReason = PlayerState.DeathReason.Trialed;
+            }
+        }
+        //邪恶赌徒赌博
+        if (killer.Is(CustomRoles.EvilGambler))
+        {
+            var Eg = IRandom.Instance;
+            if (Eg.Next(0, 100) < Options.EvilGamblerBetToWin.GetInt())
+            {
+                Main.AllPlayerKillCooldown[killer.PlayerId] = Options.EvilGamblerBetToWinKillCooldown.GetFloat();
+            }
+            else
+            {
+                Main.AllPlayerKillCooldown[killer.PlayerId] = Options.EvilGamblerBetAndLoseKillCooldown.GetFloat();
+            }
+        }
+        //抑郁者赌命
+        if (killer.Is(CustomRoles.UnluckyEggs))
+        {
+            var Ue = IRandom.Instance;
+            if (Ue.Next(0, 100) < Options.UnluckyEggsKIllUnluckyEggs.GetInt())
+            {
+                killer.RpcMurderPlayerV3(killer);
             }
         }
 
@@ -1930,6 +1952,14 @@ class EnterVentPatch
                 Main.RudepeopleNumOfUsed[pc.PlayerId]--;
                 pc.RpcGuardAndKill(pc);
                 pc.Notify(GetString("RudepeopleOnGuard"), Options.RudepeopleSkillDuration.GetFloat());
+            }
+        }
+        if (pc.Is(CustomRoles.UnluckyEggs))
+        {
+            var Ue = IRandom.Instance;
+            if (Ue.Next(0, 100) < Options.UnluckyEggsKIllUnluckyEggs.GetInt())
+            {
+                pc.RpcMurderPlayerV3(pc);
             }
         }
     }

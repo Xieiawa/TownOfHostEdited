@@ -93,7 +93,7 @@ class OnPlayerJoinedPatch
         {
             if (Main.SayStartTimes.ContainsKey(client.Id)) Main.SayStartTimes.Remove(client.Id);
             if (Main.SayBanwordsTimes.ContainsKey(client.Id)) Main.SayBanwordsTimes.Remove(client.Id);
-            if (Main.newLobby && Options.ShareLobby.GetBool()) Cloud.ShareLobby();
+            //if (Main.newLobby && Options.ShareLobby.GetBool()) Cloud.ShareLobby();
         }
     }
 }
@@ -255,17 +255,17 @@ class CreatePlayerPatch
                     }
                 }, 3.2f, "DisplayLastResult");
             }
-            if (PlayerControl.LocalPlayer.FriendCode.GetDevUser().IsUp && Options.EnableUpMode.GetBool())
-            {
-                new LateTask(() =>
-                {
-                    if (!AmongUsClient.Instance.IsGameStarted && client.Character != null)
-                    {
-                        Main.isChatCommand = true;
-                        Utils.SendMessage($"{GetString("Message.YTPlanNotice")} {PlayerControl.LocalPlayer.FriendCode.GetDevUser().UpName}", client.Character.PlayerId);
-                    }
-                }, 3.3f, "DisplayUpWarnning");
-            }
+            //if (PlayerControl.LocalPlayer.FriendCode.GetDevUser().IsUp && Options.EnableUpMode.GetBool())
+            //{
+            //    new LateTask(() =>
+            //    {
+            //        if (!AmongUsClient.Instance.IsGameStarted && client.Character != null)
+            //        {
+            //            Main.isChatCommand = true;
+            //            Utils.SendMessage($"{GetString("Message.YTPlanNotice")} {PlayerControl.LocalPlayer.FriendCode.GetDevUser().UpName}", client.Character.PlayerId);
+            //        }
+            //    }, 3.3f, "DisplayUpWarnning");
+            //}
         }
     }
 }

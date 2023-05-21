@@ -163,12 +163,12 @@ internal class ChatCommands
                 case "/up":
                     canceled = true;
                     subArgs = text.Remove(0, 3);
-                    if (!PlayerControl.LocalPlayer.FriendCode.GetDevUser().IsUp) break;
-                    if (!Options.EnableUpMode.GetBool())
-                    {
-                        Utils.SendMessage(string.Format(GetString("Message.YTPlanDisabled"), GetString("EnableYTPlan")));
-                        break;
-                    }
+                    //if (!PlayerControl.LocalPlayer.FriendCode.GetDevUser().IsUp) break;
+                    //if (!Options.EnableUpMode.GetBool())
+                    //{
+                    //    Utils.SendMessage(string.Format(GetString("Message.YTPlanDisabled"), GetString("EnableYTPlan")));
+                    //    break;
+                    //}
                     if (!GameStates.IsLobby)
                     {
                         Utils.SendMessage(GetString("Message.OnlyCanUseInLobby"));
@@ -317,11 +317,11 @@ internal class ChatCommands
                     Utils.SendMessage(msgText, PlayerControl.LocalPlayer.PlayerId);
                     break;
 
-                case "/qq":
-                    canceled = true;
-                    if (Main.newLobby) Cloud.ShareLobby(true);
-                    else Utils.SendMessage("很抱歉，每个房间车队姬只会发一次", PlayerControl.LocalPlayer.PlayerId);
-                    break;
+                //case "/qq":
+                //    canceled = true;
+                //    if (Main.newLobby) Cloud.ShareLobby(true);
+                //    else Utils.SendMessage("很抱歉，每个房间车队姬只会发一次", PlayerControl.LocalPlayer.PlayerId);
+                //    break;
 
                 case "/setrole":
                     if (!DebugModeManager.AmDebugger) break;
